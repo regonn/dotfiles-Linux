@@ -3,32 +3,18 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$PATH:/Users/regonn/flutter/bin
-export FLUTTER_FRAMEWORK_DIR=/Users/regonn/flutter
 eval "$(rbenv init - zsh)"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm use stable > /dev/null
-export RBENV_ROOT=/usr/local/var/rbenv
+source /usr/share/nvm/init-nvm.sh
+nvm use stable > /dev/null 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH=$PATH:/Users/regonn/Library/Android/sdk/platform-tools
-export PATH=$PATH:/Users/regonn/Library/Android/sdk/tools
-export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk
-export CONFIGURE_ARGS="with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PGHOST=localhost
 export EDITOR='vim'
-export ANDROID_HOME=/Users/regonn/Library/Android/sdk
-export RUST_SRC_PATH=/Users/regonn/rust/src
-export PYENV_ROOT=/Users/regonn/.pyenv
-export PATH=$PATH:/Users/regonn/.pyenv/bin
 eval "$(pyenv init -)"
 export XDG_CONFIG_HOME=$HOME/.config
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -115,8 +101,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 # sudo の後ろでコマンド名を補完する
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*:sudo:*' command-path /usr/sbin /usr/bin /sbin /bin
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
@@ -200,10 +185,6 @@ alias sudo='sudo '
 export CLICOLOR=1
 alias ls='ls -G -F'
 alias vim='nvim'
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+alias emacs='emacs -nw'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
