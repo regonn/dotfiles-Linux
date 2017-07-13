@@ -3,6 +3,7 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
+export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 eval "$(rbenv init - zsh)"
 source /usr/share/nvm/init-nvm.sh
 nvm use stable > /dev/null 
@@ -12,7 +13,6 @@ eval "$(pyenv init -)"
 export XDG_CONFIG_HOME=$HOME/.config
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
 
