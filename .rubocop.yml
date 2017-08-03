@@ -9,6 +9,7 @@ AllCops:
     - 'db/**/*'
     - 'db/*'
     - 'config/**/*'
+  TargetRubyVersion: 2.4
 
 # allow redirect_to xxx and return
 Style/AndOr:
