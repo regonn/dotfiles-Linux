@@ -6,6 +6,7 @@ set -x XMODIFIERS @im=fcitx
 set -x QT_IM_MODULE fcitx
 set -gx PYENV_ROOT "$HOME/.pyenv"
 set -x PATH $PATH "$PYENV_ROOT/shims"
+set -x PATH $PATH "$HOME/.pub-cache/bin"
 status --is-interactive; and . (pyenv init - | psub)
 . (pyenv init - | psub)
 rbenv init - | source
