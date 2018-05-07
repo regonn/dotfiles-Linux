@@ -30,12 +30,15 @@ Style/Lambda:
 Style/NumericLiterals:
   MinDigits: 7
 
+
 # allow has_ and is_
-Style/PredicateName:
+Naming/PredicateName:
   NamePrefixBlacklist:
-    - "have_"
+    - have_
+    - is_
   NamePrefix:
-    - "have_"
+    - have_
+    - is_
 
 Style/StringLiterals:
   Enabled: false

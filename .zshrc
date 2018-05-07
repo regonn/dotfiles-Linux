@@ -3,10 +3,9 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 eval "$(rbenv init - zsh)"
 source /usr/share/nvm/init-nvm.sh
-nvm use stable > /dev/null 
+nvm use stable > /dev/null
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export EDITOR='vim'
 eval "$(pyenv init -)"
@@ -15,6 +14,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
+export LIGHTGBM_PATH=$HOME/LightGBM
 
 # 色を使用出来るようにする
 autoload -Uz colors
