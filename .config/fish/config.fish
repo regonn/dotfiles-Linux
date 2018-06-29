@@ -12,6 +12,7 @@ set -x PATH $PATH "$HOME/.pub-cache/bin"
 set -x PATH $PATH "$HOME/flutter/flutter/bin"
 set -x XGBOOST_BUILD_VERSION master
 set -x JULIA_HOME "/usr/bin"
+set -x LIBJULIA "/usr/lib/libjulia.so"
 set -x ANDROID_HOME "/opt/android-sdk"
 status --is-interactive; and . (pyenv init - | psub)
 rbenv init - | source
