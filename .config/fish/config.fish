@@ -6,15 +6,12 @@ set -x GTK_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
 set -x DOTNET_SKIP_FIRST_TIME_EXPERIENCE true
 set -x QT_IM_MODULE fcitx
-set -gx PYENV_ROOT "$HOME/.pyenv"
-set -x PATH $PATH "$PYENV_ROOT/shims"
 set -x PATH $PATH "$HOME/.pub-cache/bin"
 set -x XGBOOST_BUILD_VERSION master
 set -x JULIA_HOME "/usr/bin"
 set -x LIBJULIA "/usr/lib/libjulia.so"
 set -x ANDROID_SDK_ROOT "$HOME/Android/sdk"
 set -x ANDROID_HOME "$ANDROID_SDK_ROOT"
-status --is-interactive; and . (pyenv init - | psub)
 rbenv init - | source
 
 # Base16 Shell
@@ -23,3 +20,13 @@ if status --is-interactive
 end
 
 alias vim='/usr/bin/nvim'
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/regonn/.config/yarn/global/node_modules/tabtab/.completions/serverless.fish ]; and . /home/regonn/.config/yarn/global/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/regonn/.config/yarn/global/node_modules/tabtab/.completions/sls.fish ]; and . /home/regonn/.config/yarn/global/node_modules/tabtab/.completions/sls.fish
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/regonn/google-cloud-sdk/path.fish.inc' ]; . '/home/regonn/google-cloud-sdk/path.fish.inc'; end
