@@ -12,7 +12,7 @@
 	reup = rebase-update # depot_tools specific
 [user]
 	name = regonn
-	email = programmer@regonn.biz
+	email = programmer@haizine.art
 [color]
 	ui = always
 [core]
@@ -64,3 +64,8 @@
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [init]
 	templateDir = /home/regonn/.git-templates/git-secrets
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
